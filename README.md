@@ -1,89 +1,37 @@
-# Aurora-Music
-Music Audio Tagger
+🌅 AURORA - Audio Metadata Analyzer & Tagger
+Versione Portable v1.4
 
-# 🌅 Aurora
-**Audio Metadata Analyzer & Tagger**  
-_by Bozzy_
+📥 COME USARE:
+1. Estrai tutti i file in una cartella
+2. Fai doppio click su "Aurora.bat" o "Aurora.exe"
+3. Segui le istruzioni a schermo
+4. Trascina la cartella o file audio da analizzare
 
----
+🎵 COSA FA AURORA:
+• Recupera automaticamente titoli, artisti, album e anni ufficiali
+• Scarica le copertine degli album in alta qualità  
+• Analizza BPM, tonalità musicale e volume (loudness)
+• Aggiunge generi, etichette discografiche e metadata completi
+• Rinomina i file automaticamente basandosi sui metadata
 
-## 🎯 Obiettivo
-**Aurora** è un software in Python che analizza le tracce audio per recuperare e aggiornare automaticamente i **metadata musicali e tecnici**.  
-È pensato per DJ, produttori e appassionati che vogliono avere una libreria musicale pulita, precisa e completa, **senza dover editare i tag a mano**.
+⚙️ CONFIGURAZIONE API (OPZIONALE):
+Per risultati migliori, modifica Configurazione.ini e aggiungi:
+• Last.fm: https://www.last.fm/api/account/create
+• Discogs: https://www.discogs.com/settings/developers
+• AcoustID: https://acoustid.org/api-key
 
----
+📁 FORMATI SUPPORTATI:
+MP3, FLAC, WAV, M4A, OGG, OPUS
 
-## ⚙️ Come funziona
-Quando avvii Aurora:
-1. Ti chiede di **trascinare una cartella o un file audio** nel terminale;  
-2. Ti fa scegliere il **tipo di analisi** da eseguire:  
+💻 REQUISITI:
+• Windows 10/11 (64-bit)
+• 500MB spazio libero  
+• Connessione internet per ricerca metadata
 
-| Modalità | Descrizione | Metadata aggiornati |
-|-----------|--------------|--------------------|
-| **BASIC** | Recupera solo informazioni ufficiali (senza analisi audio). | Titolo, Artista, Album, Anno, Artwork |
-| **ADVANCED** | Analizza i parametri tecnici del suono. | BPM, Tonalità, Decibel (RMS) |
-| **FULL** | Combina i due livelli: lookup + analisi audio. | Tutto |
-| **AUTO (in sviluppo)** | Inserisce solo i tag mancanti, senza sovrascrivere quelli già presenti. | Dinamico |
+❓ PROBLEMI COMUNI:
+• Se l'app non si avvia: assicurati di estrarre tutti i file
+• Se mancano metadata: controlla connessione internet e nomi file
+• Per file problematici: usa prima la modalità BASIC
 
----
-
-## 🔍 Analisi e lookup
-Aurora combina due approcci:
-
-### 🧠 1. Lookup online (BASIC / FULL)
-Se disponi di una **chiave API AcoustID**, Aurora:
-- genera un’impronta digitale della traccia;  
-- la confronta con il database **MusicBrainz / AcoustID**;  
-- recupera i **metadata ufficiali** dell’artista, dell’album e dell’anno;  
-- scarica anche la **copertina** dell’album, se disponibile.  
-
-Aurora ignora versioni non ufficiali (es. “Lyric Video”, “Live”, “Remix” non dichiarati).
-
-### 🎧 2. Analisi audio locale (ADVANCED / FULL)
-Quando serve estrarre dati tecnici, Aurora usa **librosa** e **soundfile** per:
-- Calcolare il **BPM** (velocità del brano);  
-- Stimare la **tonalità musicale** (chiave armonica);  
-- Misurare il livello medio in **decibel RMS** (volume percepito).  
-
----
-
-## 💾 Output
-- I **metadata vengono scritti direttamente nei file audio** (`.mp3`, `.flac`, `.wav`, `.ogg`, `.m4a`, ecc.);  
-- Viene creato anche un file di report `tagger_report.json`, con tutti i risultati dell’analisi.  
-
----
-
-## 🧰 Stack Tecnico
-- **Python 3.11+**
-- Librerie principali:
-  - `mutagen` → lettura/scrittura metadata  
-  - `librosa`, `soundfile`, `numpy` → analisi audio  
-  - `requests` → accesso ai database online  
-  - `tqdm` → barra di progresso  
-  - *(in futuro: `sqlite3` per database locale e `rich` per interfaccia CLI)*
-
----
-
-## 🚀 Roadmap
-- [x] Modalità BASIC / ADVANCED / FULL  
-- [x] Scrittura diretta nei tag audio  
-- [x] Pulizia percorso Windows (drag & drop)  
-- [ ] Modalità **AUTO** (aggiornamento parziale)  
-- [ ] Cache locale per risultati ripetuti  
-- [ ] Interfaccia CLI colorata  
-- [ ] Integrazione con **Traktor / Rekordbox / Spotify API**  
-
----
-
-## 🌿 Filosofia
-Aurora nasce dalla filosofia del **chilling**:  
-niente fretta, niente presura — solo un flusso naturale dove musica e tecnologia si incontrano.  
-
-È uno strumento tecnico, ma con l’anima calma e lucida di chi vive la musica **con consapevolezza e precisione**.  
-Aurora non tagga solo file: **riordina il tuo suono**.
-
----
-
-## 💡 Esecuzione
-```bash
-python aurora.py
+by Bozzy 🌅
+"""
