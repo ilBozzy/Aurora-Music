@@ -25,7 +25,7 @@ MP3, FLAC, WAV, M4A, OGG, OPUS
 
 💻 REQUISITI:
 • Windows 10/11 (64-bit)
-• 500MB spazio libero  
+• 100MB spazio libero  
 • Connessione internet per ricerca metadata
 
 ❓ PROBLEMI COMUNI:
